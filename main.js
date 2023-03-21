@@ -76,4 +76,17 @@ window.onscroll = ()=>{
       ele.style.width = 0;
     })
   }
+
+  if (window.scrollY >= document.querySelector(".articles").offsetTop){
+    document.querySelector(".scroll-to-top").style.right = "7px";
+  }else{
+    document.querySelector(".scroll-to-top").style.right = "-70px";
+  }
 }
+
+document.querySelector(".scroll-to-top").addEventListener("click", ()=>{
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+})
