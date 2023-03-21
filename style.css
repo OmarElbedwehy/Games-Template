@@ -5,6 +5,7 @@
 :root{
   --main-color: #2196f3;
   --section-bg: #ececec;
+  --height: 0;
 }
 
 *{
@@ -22,6 +23,16 @@ body{
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.scroller{
+  position: fixed;
+  width: 0%;
+  background-color: var(--main-color);
+  height: 4px;
+  border-radius: 10px;
+  transition: 0.3s;
+  z-index: 100;
 }
 
 header{
@@ -265,6 +276,11 @@ header .main-nav > li:hover .mega-menu{
   transform: translateX(-50%);
   color: var(--main-color);
   animation: go-down 1.5s infinite;
+  cursor: pointer;
+}
+
+.go-down:hover{
+  animation-play-state: paused;
 }
 
 @keyframes go-down {
@@ -472,8 +488,8 @@ section{
 }
 
 .features .container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -482,6 +498,8 @@ section{
   position: relative;
   overflow: hidden;
   border: 1px solid #ccc;
+  width: 340px;
+  margin: auto;
 }
 
 .features .card .image{
@@ -920,6 +938,8 @@ section{
   height: 30px;
   background-color: #eee;
   position: relative;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .skills .percentage .pre .precent span{
@@ -929,6 +949,7 @@ section{
   height: 100%;
   background-color: var(--main-color);
   transition: 0.8s;
+  border-radius: 6px;
 }
 
 .skills .pre h3{
@@ -1057,9 +1078,14 @@ section{
 .latest-events .main-nums .card{
   text-align: center;
   border: 1px solid #d4d4d4;
-  width: 75px;
+  min-width: 75px;
   border-radius: 5px;
   position: relative;
+  transition: 0.3s;
+}
+
+.latest-events .main-nums .card:hover{
+  border: 1px solid var(--main-color);
 }
 
 .latest-events .main-nums .card h3{
@@ -1072,6 +1098,11 @@ section{
   border-top: 1px solid #d4d4d4;
   padding: 10px 0;
   font-size: 15px;
+  transition: 0.3s;
+}
+
+.latest-events .main-nums .card:hover p{
+  border-top: 1px solid var(--main-color);
 }
 
 .latest-events .info .text{
@@ -1153,8 +1184,8 @@ section{
 }
 
 .pricing-plans .container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -1163,6 +1194,8 @@ section{
   box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
   z-index: 1;
   position: relative;
+  width: 340px;
+  margin: auto;
 }
 
 .pricing-plans .card::before{
@@ -1382,6 +1415,8 @@ section{
   text-align: center;
   padding: 20px;
   position: relative;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .stats .card::before{
@@ -1391,7 +1426,7 @@ section{
   top: 0;
   background-color: var(--main-color);
   width: 3px;
-  height: 0;
+  height: var(--height);
   transition: 0.5s;
 }
 
@@ -1402,7 +1437,7 @@ section{
   bottom: 0;
   background-color: var(--main-color);
   width: 3px;
-  height: 0;
+  height: var(--height);
   transition: 0.5s;
 }
 
@@ -1423,7 +1458,6 @@ section{
 }
 
 .discount{
-  /* padding: 50px 0; */
   display: flex;
 }
 
@@ -1646,6 +1680,29 @@ footer .box img{
   width: 100%;
 }
 
+.bottom-text a{
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.bottom-text a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background-color: #fff;
+  width: 0%;
+  height: 3px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.bottom-text a:hover::after{
+  width: 100%;
+}
+
+
 @media (min-width: 768px){
     .container{
         width: 750px;
@@ -1662,23 +1719,17 @@ footer .box img{
     align-items: center;
   }
   header .main-nav .nav-link{
-    /* padding: 30px 0; */
     padding: 0;
   }
   header .main-nav .l-nav-link{
-    /* padding: 30px 0; */
     padding: 0;
   }
   header .main-nav .nav-link a{
-    /* padding: 16px 25px; */
     padding: 20px 12px;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     font-size: 15px;
   }
   header .main-nav .l-nav-link .f-link{
-    /* padding: 16px 25px; */
     padding: 20px 12px;
     display: flex;
     font-size: 15px;
@@ -1769,7 +1820,7 @@ footer .box img{
     max-width: 100%;
   }
   .discount .image .content{
-    padding: 20px;
+    padding: 20px !important;
   }
   .discount .form{
     max-width: 100%;
@@ -1832,6 +1883,15 @@ footer .box img{
   }
   .latest-events::after{
     display: none;
+  }
+  .h-it-w .image{
+    display: none;
+  }
+  .pricing-plans .card:nth-child(2){
+    top: 0;
+  }
+  .discount .image .content{
+    padding: 50px;
   }
 }
 
