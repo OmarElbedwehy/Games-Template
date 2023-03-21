@@ -13,6 +13,7 @@
     <title>Templete Three</title>
   </head>
   <body>
+    <div class="scroller"></div>
     <header>
       <div class="container">
         <a class="logo" href="#">Omar</a>
@@ -56,7 +57,7 @@
         <img src="imgs/landing-image.png">
       </div>
       </div>
-      <a href="#" class="go-down">
+      <a class="go-down">
         <i class="fas fa-angle-double-down fa-2x"></i>
       </a>
     </div>
@@ -510,7 +511,7 @@
               <span>80%</span>
             </h3>
             <div class="precent">
-              <span id="html"></span>
+              <span data-precent="80" id="html"></span>
             </div>
           </div>
           <div class="pre">
@@ -519,7 +520,7 @@
               <span>85%</span>
             </h3>
             <div class="precent">
-              <span id="css"></span>
+              <span data-precent="85" id="css"></span>
             </div>
           </div>
           <div class="pre">
@@ -528,7 +529,7 @@
               <span>70%</span>
             </h3>
             <div class="precent">
-              <span id="java-s"></span>
+              <span data-precent="70" id="java-s"></span>
             </div>
           </div>
           <div class="pre">
@@ -537,7 +538,7 @@
               <span>80%</span>
             </h3>
             <div class="precent">
-              <span id="python"></span>
+              <span data-precent="80" id="python"></span>
             </div>
           </div>
         </div>
@@ -583,19 +584,19 @@
         <div class="info">
           <div class="main-nums">
           <div class="card">
-            <h3>54</h3>
+            <h3 id="days"></h3>
             <p>Days</p>
           </div>
           <div class="card">
-            <h3>04</h3>
+            <h3 id="hours">04</h3>
             <p>Hours</p>
           </div>
           <div class="card">
-            <h3>21</h3>
+            <h3 id="minutes">21</h3>
             <p>Minutes</p>
           </div>
           <div class="card">
-            <h3>36</h3>
+            <h3 id="secounds">36</h3>
             <p>Seconds</p>
           </div>
         </div>
@@ -712,22 +713,22 @@
       <div class="container">
         <div class="card">
           <i class="far fa-user fa-2x fa-fw"></i>
-          <h1>150</h1>
+          <h1 id="card-num" data-goal="150">0</h1>
           <p>Clients</p>
         </div>
         <div class="card">
           <i class="fas fa-code fa-2x fa-fw"></i>
-          <h1>135</h1>
+          <h1 id="card-num" data-goal="135">0</h1>
           <p>Projects</p>
         </div>
         <div class="card">
           <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-          <h1>50</h1>
+          <h1 id="card-num" data-goal="50">0</h1>
           <p>Countries</p>
         </div>
         <div class="card">
           <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-          <h1>500</h1>
+          <h1 id="card-num" data-goal="500">0</h1>
           <p>Money</p>
         </div>
       </div>
@@ -814,7 +815,7 @@
         </div>
       </div>
       <div class="bottom-text">
-        <h3>Coded & Created By Omar Elbedwehy</h3>
+        <h3>Developed By <a target="_blank" href="https://github.com/OmarElbedwehy">Omar Elbedwehy</a></h3>
       </div>
     </footer>
 
